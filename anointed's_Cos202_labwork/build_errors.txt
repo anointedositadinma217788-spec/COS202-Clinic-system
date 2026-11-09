@@ -1,0 +1,16 @@
+In file included from main.cpp:2:0:
+gui/Win32Gui.h:5:0: warning: "NOMINMAX" redefined
+ #define NOMINMAX
+ 
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\c++config.h:507:0,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cstdlib:41,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\stdlib.h:36,
+                 from c:\mingw\include\objbase.h:12,
+                 from c:\mingw\include\ole2.h:9,
+                 from c:\mingw\include\windows.h:100,
+                 from main.cpp:1:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\os_defines.h:45:0: note: this is the location of the previous definition
+ #define NOMINMAX 1
+ 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file bin\clinic_app.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
