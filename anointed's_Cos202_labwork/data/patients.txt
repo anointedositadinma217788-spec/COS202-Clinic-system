@@ -1,0 +1,10 @@
+General|P001|Chinedu Okeke|21|08031234567||
+Emergency|P002|Aisha Bello|19|08122334455|4|Severe asthma attack
+Follow-Up|P003|Tunde Bakare|45|07035556677|2026-10-20|Dr. Adeyemi
+General|P004|Ngozi Eze|23|09011122233||
+General|P005|Ibrahim Musa|30|08098765432||
+Emergency|P006|Blessing Johnson|27|08144455566|5|Deep cut on left arm
+Follow-Up|P007|Fatima Abubakar|52|07066677788|2026-10-28|Dr. Hassan
+General|P008|Samuel Adeleke|20|08055544433||
+Follow-Up|P009|Kemi Adebayo|34|08177788899|2026-11-02|Dr. Eze
+General|P010|David Okon|25|09033344455||

@@ -1,34 +1,31 @@
 #include "Appointment.h"
-#include <iostream>
 
-namespace clinic_mgmt {
+namespace model {
 
-Appointment::Appointment(int num, std::string preg, std::string doc,
-                         std::string time, std::string service, std::string status)
-    : apptNumber(num), patientReg(preg), doctor(doc), appointmentTime(time),
-      serviceType(service), apptStatus(status) {}
+Appointment::Appointment(int number, const std::string& patientId, const std::string& doctor,
+                         const std::string& date, const std::string& time,
+                         const std::string& service, const std::string& status)
+    : number(number), patientId(patientId), doctor(doctor), date(date), time(time),
+      service(service), status(status) {}
 
-Appointment::~Appointment() {}
-
-int Appointment::getApptNumber() const { return apptNumber; }
-std::string Appointment::getPatientReg() const { return patientReg; }
+int Appointment::getNumber() const { return number; }
+std::string Appointment::getPatientId() const { return patientId; }
 std::string Appointment::getDoctor() const { return doctor; }
-std::string Appointment::getAppointmentTime() const { return appointmentTime; }
-std::string Appointment::getServiceType() const { return serviceType; }
-std::string Appointment::getApptStatus() const { return apptStatus; }
+std::string Appointment::getDate() const { return date; }
+std::string Appointment::getTime() const { return time; }
+std::string Appointment::getService() const { return service; }
+std::string Appointment::getStatus() const { return status; }
 
-void Appointment::setDoctor(std::string doc) { doctor = doc; }
-void Appointment::setAppointmentTime(std::string time) { appointmentTime = time; }
-void Appointment::setServiceType(std::string service) { serviceType = service; }
-void Appointment::setApptStatus(std::string status) { apptStatus = status; }
+std::string Appointment::getDateTime() const {
+    return date + " " + time;
+}
 
-void Appointment::showDetails() const {
-    std::cout << "Appt No: " << apptNumber << std::endl;
-    std::cout << "Patient Reg: " << patientReg << std::endl;
-    std::cout << "Doctor: " << doctor << std::endl;
-    std::cout << "Time: " << appointmentTime << std::endl;
-    std::cout << "Service: " << serviceType << std::endl;
-    std::cout << "Status: " << apptStatus << std::endl;
+bool Appointment::isPending() const {
+    return status == "Scheduled";
+}
+
+void Appointment::setStatus(const std::string& newStatus) {
+    status = newStatus;
 }
 
 }

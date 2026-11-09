@@ -3,35 +3,34 @@
 
 #include <string>
 
-namespace clinic_mgmt {
+namespace model {
 
 class Appointment {
 private:
-    int apptNumber;
-    std::string patientReg;
+    int number;
+    std::string patientId;
     std::string doctor;
-    std::string appointmentTime;
-    std::string serviceType;
-    std::string apptStatus;
+    std::string date;
+    std::string time;
+    std::string service;
+    std::string status;
 
 public:
-    Appointment(int num, std::string preg, std::string doc,
-                std::string time, std::string service, std::string status = "Scheduled");
-    ~Appointment();
+    Appointment(int number, const std::string& patientId, const std::string& doctor,
+                const std::string& date, const std::string& time,
+                const std::string& service, const std::string& status);
 
-    int getApptNumber() const;
-    std::string getPatientReg() const;
+    int getNumber() const;
+    std::string getPatientId() const;
     std::string getDoctor() const;
-    std::string getAppointmentTime() const;
-    std::string getServiceType() const;
-    std::string getApptStatus() const;
+    std::string getDate() const;
+    std::string getTime() const;
+    std::string getService() const;
+    std::string getStatus() const;
+    std::string getDateTime() const;
+    bool isPending() const;
 
-    void setDoctor(std::string doc);
-    void setAppointmentTime(std::string time);
-    void setServiceType(std::string service);
-    void setApptStatus(std::string status);
-
-    void showDetails() const;
+    void setStatus(const std::string& newStatus);
 };
 
 }

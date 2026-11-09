@@ -3,15 +3,17 @@
 
 #include "PatientRecord.h"
 
-namespace clinic_mgmt {
+namespace model {
 
 class GeneralPatient : public PatientRecord {
 public:
-    GeneralPatient(std::string reg, std::string name, int age, std::string phone);
-    ~GeneralPatient();
+    GeneralPatient(const std::string& patientId, const std::string& name, int age,
+                   const std::string& contact);
 
-    void showDetails() const override;
     std::string getCategory() const override;
+    std::string getPriorityLabel() const override;
+    int getConsultationFee() const override;
+    std::string getDetails() const override;
 };
 
 }

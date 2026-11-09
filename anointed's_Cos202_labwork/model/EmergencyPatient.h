@@ -2,25 +2,30 @@
 #define EMERGENCYPATIENT_H
 
 #include "PatientRecord.h"
-#include <string>
 
-namespace clinic_mgmt {
+namespace model {
 
 class EmergencyPatient : public PatientRecord {
 private:
     int priorityLevel;
-    std::string complaint;
+    std::string symptoms;
 
 public:
-    EmergencyPatient(std::string reg, std::string name, int age, std::string phone,
-                     int priority, std::string comp);
-    ~EmergencyPatient();
+    EmergencyPatient(const std::string& patientId, const std::string& name, int age,
+                     const std::string& contact);
 
-    void showDetails() const override;
     std::string getCategory() const override;
+    std::string getPriorityLabel() const override;
+    int getConsultationFee() const override;
+    std::string getDetails() const override;
+
+    std::string getExtraInfo() const override;
+    std::string getExtra1() const override;
+    std::string getExtra2() const override;
+    void setExtraFields(const std::string& first, const std::string& second) override;
 
     int getPriorityLevel() const;
-    std::string getComplaint() const;
+    std::string getSymptoms() const;
 };
 
 }

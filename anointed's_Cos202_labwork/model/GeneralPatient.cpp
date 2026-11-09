@@ -1,23 +1,26 @@
 #include "GeneralPatient.h"
-#include <iostream>
 
-namespace clinic_mgmt {
+namespace model {
 
-GeneralPatient::GeneralPatient(std::string reg, std::string name, int age, std::string phone)
-    : PatientRecord(reg, name, age, phone) {}
-
-GeneralPatient::~GeneralPatient() {}
-
-void GeneralPatient::showDetails() const {
-    std::cout << "General Patient" << std::endl;
-    std::cout << "Reg No: " << getRegNumber() << std::endl;
-    std::cout << "Name: " << getFullName() << std::endl;
-    std::cout << "Age: " << getPatientAge() << std::endl;
-    std::cout << "Phone: " << getPhoneNumber() << std::endl;
-}
+GeneralPatient::GeneralPatient(const std::string& patientId, const std::string& name, int age,
+                               const std::string& contact)
+    : PatientRecord(patientId, name, age, contact) {}
 
 std::string GeneralPatient::getCategory() const {
     return "General";
+}
+
+std::string GeneralPatient::getPriorityLabel() const {
+    return "Normal";
+}
+
+int GeneralPatient::getConsultationFee() const {
+    return 3000;
+}
+
+std::string GeneralPatient::getDetails() const {
+    return "GENERAL PATIENT\n\n" + PatientRecord::getDetails() +
+           "\nSeen in normal order on a first come, first served basis.";
 }
 
 }
